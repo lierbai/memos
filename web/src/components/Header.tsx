@@ -52,7 +52,7 @@ const Header = () => {
           {!isVisitorMode && (
             <>
               <NavLink
-                to="/"
+                to="/memos/"
                 id="header-home"
                 className={({ isActive }) =>
                   `${
@@ -65,7 +65,7 @@ const Header = () => {
                 </>
               </NavLink>
               <NavLink
-                to="/review"
+                to="/memos/review"
                 id="header-review"
                 className={({ isActive }) =>
                   `${
@@ -78,7 +78,7 @@ const Header = () => {
                 </>
               </NavLink>
               <NavLink
-                to="/resources"
+                to="/memos/resources"
                 id="header-resources"
                 className={({ isActive }) =>
                   `${
@@ -93,7 +93,7 @@ const Header = () => {
             </>
           )}
           <NavLink
-            to="/explore"
+            to="/memos/explore"
             id="header-explore"
             className={({ isActive }) =>
               `${
@@ -133,7 +133,7 @@ const Header = () => {
           {isVisitorMode && (
             <>
               <NavLink
-                to="/auth"
+                to="/memos/auth"
                 id="header-auth"
                 className={({ isActive }) =>
                   `${

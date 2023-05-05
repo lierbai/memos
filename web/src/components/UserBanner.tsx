@@ -29,7 +29,7 @@ const UserBanner = () => {
 
   const handleSignOutBtnClick = async () => {
     await userStore.doSignOut();
-    window.location.href = "/auth";
+    window.location.href = "/memos/auth";
   };
 
   return (

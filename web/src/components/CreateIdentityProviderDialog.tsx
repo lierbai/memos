@@ -299,7 +299,7 @@ const CreateIdentityProviderDialog: React.FC<Props> = (props: Props) => {
           <>
             {isCreating && (
               <p className="border rounded-md p-2 text-sm w-full mb-2 break-all">
-                {t("setting.sso-section.redirect-url")}: {absolutifyLink("/auth/callback")}
+                {t("setting.sso-section.redirect-url")}: {absolutifyLink("/memos/auth/callback")}
               </p>
             )}
             <Typography className="!mb-1" level="body2">

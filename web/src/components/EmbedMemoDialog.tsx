@@ -14,7 +14,7 @@ const EmbedMemoDialog: React.FC<Props> = (props: Props) => {
   const { memoId, destroy } = props;
 
   const memoEmbeddedCode = () => {
-    return `<iframe style="width:100%;height:auto;min-width:256px;" src="${window.location.origin}/m/${memoId}/embed" frameBorder="0"></iframe>`;
+    return `<iframe style="width:100%;height:auto;min-width:256px;" src="${window.location.origin}/memos/m/${memoId}/embed" frameBorder="0"></iframe>`;
   };
 
   const handleCopyCode = () => {

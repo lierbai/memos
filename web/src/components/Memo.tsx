@@ -182,11 +182,11 @@ const Memo: React.FC<Props> = (props: Props) => {
     <div className={`memo-wrapper ${"memos-" + memo.id} ${memo.pinned ? "pinned" : ""}`} ref={memoContainerRef}>
       <div className="memo-top-wrapper">
         <div className="status-text-container">
-          <Link className="time-text" to={`/m/${memo.id}`} onClick={handleMemoCreatedTimeClick}>
+          <Link className="time-text" to={`/memos/m/${memo.id}`} onClick={handleMemoCreatedTimeClick}>
             {createdTimeStr}
           </Link>
           {isVisitorMode && (
-            <Link className="name-text" to={`/u/${memo.creatorId}`}>
+            <Link className="name-text" to={`/memos/u/${memo.creatorId}`}>
               @{memo.creatorName}
             </Link>
           )}

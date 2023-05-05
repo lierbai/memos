@@ -98,7 +98,7 @@ const Auth = () => {
       await api.signup(username, password);
       const user = await userStore.doSignIn();
       if (user) {
-        window.location.href = "/memos";
+        window.location.href = "/memos/";
       } else {
         toast.error(t("common.signup-failed"));
       }

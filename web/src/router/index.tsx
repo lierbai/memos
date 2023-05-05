@@ -64,7 +64,7 @@ const router = createBrowserRouter([
           if (isNullorUndefined(host)) {
             return redirect("/memos/auth");
           } else if (isNullorUndefined(user)) {
-            return redirect("/explore");
+            return redirect("/memos/explore");
           }
           return null;
         },
