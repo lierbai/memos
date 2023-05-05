@@ -10,7 +10,7 @@ const NotFound = () => {
       <div className="page-container">
         <p className="title-text">{t("message.page-not-found")}</p>
         <div className="action-button-container">
-          <Link to="/" className="link-btn">
+          <Link to="/memos/" className="link-btn">
             <span>🏠</span> {t("router.back-to-home")}
           </Link>
         </div>

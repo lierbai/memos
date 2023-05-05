@@ -33,7 +33,7 @@ const initialGlobalStateLoader = (() => {
 
 const router = createBrowserRouter([
   {
-    path: "/auth",
+    path: "/memos/auth",
     element: <Auth />,
     loader: async () => {
       await initialGlobalStateLoader();
@@ -41,11 +41,11 @@ const router = createBrowserRouter([
     },
   },
   {
-    path: "/auth/callback",
+    path: "/memos/auth/callback",
     element: <AuthCallback />,
   },
   {
-    path: "/",
+    path: "/memos/",
     element: <Root />,
     children: [
       {
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
 
           const { host, user } = store.getState().user;
           if (isNullorUndefined(host)) {
-            return redirect("/auth");
+            return redirect("/memos/auth");
           } else if (isNullorUndefined(user)) {
             return redirect("/explore");
           }
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
         },
       },
       {
-        path: "/u/:userId",
+        path: "/memos/u/:userId",
         element: <Home />,
         loader: async () => {
           await initialGlobalStateLoader();
@@ -83,7 +83,7 @@ const router = createBrowserRouter([
 
           const { host } = store.getState().user;
           if (isNullorUndefined(host)) {
-            return redirect("/auth");
+            return redirect("/memos/auth");
           }
           return null;
         },
@@ -102,7 +102,7 @@ const router = createBrowserRouter([
 
           const { host } = store.getState().user;
           if (isNullorUndefined(host)) {
-            return redirect("/auth");
+            return redirect("/memos/auth");
           }
           return null;
         },
@@ -121,7 +121,7 @@ const router = createBrowserRouter([
 
           const { host } = store.getState().user;
           if (isNullorUndefined(host)) {
-            return redirect("/auth");
+            return redirect("/memos/auth");
           }
           return null;
         },
@@ -140,7 +140,7 @@ const router = createBrowserRouter([
 
           const { host } = store.getState().user;
           if (isNullorUndefined(host)) {
-            return redirect("/auth");
+            return redirect("/memos/auth");
           }
           return null;
         },
@@ -148,7 +148,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/m/:memoId",
+    path: "/memos/m/:memoId",
     element: <MemoDetail />,
     loader: async () => {
       await initialGlobalStateLoader();
@@ -161,13 +161,13 @@ const router = createBrowserRouter([
 
       const { host } = store.getState().user;
       if (isNullorUndefined(host)) {
-        return redirect("/auth");
+        return redirect("/memos/auth");
       }
       return null;
     },
   },
   {
-    path: "/m/:memoId/embed",
+    path: "/memos/m/:memoId/embed",
     element: <EmbedMemo />,
     loader: async () => {
       await initialGlobalStateLoader();
@@ -177,6 +177,14 @@ const router = createBrowserRouter([
       } catch (error) {
         // do nth
       }
+      return null;
+    },
+  },
+  {
+    path: "/memos/*",
+    element: <NotFound />,
+    loader: async () => {
+      await initialGlobalStateLoader();
       return null;
     },
   },

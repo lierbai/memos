@@ -73,7 +73,7 @@ const Auth = () => {
       await api.signin(username, password);
       const user = await userStore.doSignIn();
       if (user) {
-        window.location.href = "/";
+        window.location.href = "/memos/";
       } else {
         toast.error(t("message.login-failed"));
       }
@@ -98,7 +98,7 @@ const Auth = () => {
       await api.signup(username, password);
       const user = await userStore.doSignIn();
       if (user) {
-        window.location.href = "/";
+        window.location.href = "/memos";
       } else {
         toast.error(t("common.signup-failed"));
       }
@@ -112,7 +112,7 @@ const Auth = () => {
   const handleSignInWithIdentityProvider = async (identityProvider: IdentityProvider) => {
     const stateQueryParameter = `auth.signin.${identityProvider.name}-${identityProvider.id}`;
     if (identityProvider.type === "OAUTH2") {
-      const redirectUri = absolutifyLink("/auth/callback");
+      const redirectUri = absolutifyLink("/memos/auth/callback");
       const oauth2Config = identityProvider.config.oauth2Config;
       const authUrl = `${oauth2Config.authUrl}?client_id=${
         oauth2Config.clientId

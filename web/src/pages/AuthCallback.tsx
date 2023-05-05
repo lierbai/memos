@@ -27,7 +27,7 @@ const AuthCallback = () => {
     const state = searchParams.get("state");
 
     if (code && state) {
-      const redirectUri = absolutifyLink("/auth/callback");
+      const redirectUri = absolutifyLink("/memos/auth/callback");
       const identityProviderId = Number(last(state.split("-")));
       if (identityProviderId) {
         api
@@ -39,7 +39,7 @@ const AuthCallback = () => {
             });
             const user = await userStore.doSignIn();
             if (user) {
-              window.location.href = "/";
+              window.location.href = "/memos/";
             } else {
               toast.error(t("message.login-failed"));
             }

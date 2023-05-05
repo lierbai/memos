@@ -6,24 +6,25 @@ const devProxyServer = "http://localhost:8081/";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/memos/",
   plugins: [react()],
   server: {
     host: "0.0.0.0",
     port: 3001,
     proxy: {
-      "^/api": {
+      "^/memos/api": {
         target: devProxyServer,
         changeOrigin: true,
       },
-      "^/o/": {
+      "^/memos/o/": {
         target: devProxyServer,
         changeOrigin: true,
       },
-      "^/u/\\d*/rss.xml": {
+      "^/memos/u/\\d*/rss.xml": {
         target: devProxyServer,
         changeOrigin: true,
       },
-      "/explore/rss.xml": {
+      "/memos/explore/rss.xml": {
         target: devProxyServer,
         changeOrigin: true,
       },

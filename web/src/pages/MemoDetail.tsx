@@ -60,11 +60,11 @@ const MemoDetail = () => {
             {!loadingState.isLoading && (
               <>
                 {user ? (
-                  <Link to="/" className="btn">
+                  <Link to="/memos/" className="btn">
                     <span className="icon">🏠</span> {t("router.back-to-home")}
                   </Link>
                 ) : (
-                  <Link to="/auth" className="btn">
+                  <Link to="/memos/auth" className="btn">
                     <span className="icon">👉</span> {t("common.sign-in")}
                   </Link>
                 )}
@@ -78,7 +78,7 @@ const MemoDetail = () => {
               <div className="memo-header">
                 <div className="status-container">
                   <span className="time-text">{getDateTimeString(state.memo.createdTs)}</span>
-                  <a className="name-text" href={`/u/${state.memo.creatorId}`}>
+                  <a className="name-text" href={`/memos/u/${state.memo.creatorId}`}>
                     @{state.memo.creatorName}
                   </a>
                 </div>
